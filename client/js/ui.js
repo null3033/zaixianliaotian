@@ -471,21 +471,13 @@ export function loginFormHandler(modal) {
 // 生成登录表单HTML
 // Generate login form HTML
 export function generateLoginForm(isModal = false) {
-	const idPrefix = isModal ? '-modal' : '';
-	return `		<div class="input-group">
-			<input id="userName${idPrefix}" type="text" autocomplete="username" required minlength="1" maxlength="15" placeholder="">
-			<label for="userName${idPrefix}" class="floating-label">${t('ui.username', 'Username')}</label>
-		</div>
-		<div class="input-group">
-			<input id="roomName${idPrefix}" type="text" required minlength="1" maxlength="15" placeholder="">
-			<label for="roomName${idPrefix}" class="floating-label">${t('ui.node_name', 'Node Name')}</label>
-		</div>
-		<div class="input-group">
-			<input id="password${idPrefix}" type="password" autocomplete="${isModal ? 'off' : 'current-password'}" minlength="1" maxlength="15" placeholder="">
-			<label for="password${idPrefix}" class="floating-label">${t('ui.node_password', 'Node Password')} <span class="optional">${t('ui.optional', '(optional)')}</span></label>
-		</div>
-		<button type="submit" class="login-btn">${t('ui.enter', 'ENTER')}</button>
-	`;
+  const idPrefix = isModal ? '-modal' : '';
+  return `
+    <div class="input-group">
+      <input id="roomName${idPrefix}" type="text" required minlength="1" maxlength="15" placeholder="2025信息工程系" value="2025信息工程系">
+      <label for="roomName${idPrefix}" class="floating-label">${t('ui.node_name', '节点名称')}</label>
+    </div>
+  `;
 }
 export function openLoginModal() {
 	const modal = document.createElement('div');
